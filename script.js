@@ -1,7 +1,7 @@
 const getComputerChoice = () => {
   const options = ['Rock', 'Paper', 'Scissors'];
   return options[Math.floor(Math.random() * options.length)]
-}
+};
 
 const playRound = (playerSelection, computerSelection) => {
   if(playerSelection.toLowerCase() === 'rock' && computerSelection === 'Paper') {
@@ -19,7 +19,13 @@ const playRound = (playerSelection, computerSelection) => {
   } else if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
     return 'Draw! You both choose the same answer';
   }
-}
+};
 
-let x = playRound('Scissors', getComputerChoice())
-console.log(x)
+const game = () => {
+  for (let i = 0; i < 5; i++) {
+    let askUser = prompt('Choose between Rock, Paper and Scissors!');
+    let result = playRound(askUser, getComputerChoice());
+    console.log(result);
+  }
+};
+
