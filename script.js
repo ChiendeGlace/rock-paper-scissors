@@ -17,7 +17,9 @@ const playRound = (playerSelection, computerSelection) => {
   } else if (playerSelection.toLowerCase() === 'scissors' && computerSelection === 'Rock') {
     return 'You lose! Rock beats Scissors';
   } else if (playerSelection.toLowerCase() === computerSelection.toLowerCase()) {
-    return 'Draw! You both choose the same answer';
+    return 'Draw! You both chose the same answer';
+  } else {
+    return 'Choose the right option!';
   }
 };
 
