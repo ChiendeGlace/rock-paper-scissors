@@ -1,0 +1,24 @@
+* {
+  font-family:'Courier New', Courier, monospace;
+  margin-bottom: 2em;
+}
+h1 {
+  text-align: center;
+}
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 40%;
+  margin-inline: auto;
+}
+button {
+  font-size: 1.5rem;
+  padding: 0.5em;
+  border-radius: 10px;
+  transition: 0.5s;
+}
+.on {
+  transform: scale(1.25);
+  border: 2px solid blue;
+}
