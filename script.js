@@ -30,4 +30,3 @@ const game = () => {
     console.log(result);
   }
 };
-
