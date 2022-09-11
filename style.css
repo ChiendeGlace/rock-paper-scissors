@@ -33,4 +33,7 @@ button {
   .buttons {
     width: 100%;
   }
+  button {
+    font-size: 1.25rem;
+  }
 }
