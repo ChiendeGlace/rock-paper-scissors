@@ -22,3 +22,15 @@ button {
   transform: scale(1.25);
   border: 2px solid blue;
 }
+.score {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+
+@media (max-width: 960px) {
+  .buttons {
+    width: 100%;
+  }
+}

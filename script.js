@@ -5,11 +5,15 @@ const getComputerChoice = () => {
 const body = document.querySelector('body');
 const result = document.createElement('h2');
 result.style.textAlign = 'center';
+const score = document.createElement('p');
+score.classList.add('score')
+body.appendChild(score);
 body.appendChild(result);
 const reset = document.createElement('button');
 reset.textContent = 'Play again';
 reset.style.display = 'block';
 reset.style.marginInline = 'auto';
+
 
 const buttons = document.querySelectorAll('button');
 let playerScore = 0;
@@ -41,6 +45,7 @@ buttons.forEach(button => button.addEventListener('click', playGame));
       } else if (playerSelection === computerSelection.toLowerCase()) {
         result.textContent = 'Draw! You both chose the same answer';
       } 
+      let currentScore = `${playerScore} : ${computerScore}`;
       if(playerScore === 5){
         result.textContent = `You won 5 to ${computerScore}!`;
         buttons.forEach(button => button.removeEventListener('click', playGame));
@@ -50,6 +55,7 @@ buttons.forEach(button => button.addEventListener('click', playGame));
         buttons.forEach(button => button.removeEventListener('click', playGame));
         body.appendChild(reset);
       }
+      score.textContent = currentScore;
     };
     playRound(playerSelection, getComputerChoice());
   };
@@ -61,7 +67,9 @@ buttons.forEach(button => button.addEventListener('click', playGame));
     computerScore = 0;
     buttons.forEach(button => button.addEventListener('click', playGame));
     result.textContent = '';
+    score.textContent = '';
     body.removeChild(reset);
+    score.classList.remove('critical');
   });
 
 buttons.forEach(button => button.addEventListener('transitionend', removeTransition));
